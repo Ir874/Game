@@ -10,7 +10,9 @@ pygame.init()
 # Define colors
 white = 255,255,255
 black = 0,0,0
-blue = 204,255,229
+background = 204,255,229
+green = 0,255,0
+red = 255,0,0
 
 # FPS setter
 clock = pygame.time.Clock()
@@ -21,7 +23,12 @@ screen = pygame.display.set_mode([600,600])
 # Main event loop
 running = True
 while running:
-    for event in pygame.event.get(): # Checks for events
+    # Setting screen color and window title
+    screen.fill(background)
+    pygame.display.set_caption('Game')
+    pygame.draw.rect(screen, black,pygame.Rect(250, 250, 100, 50), width=0)
+    # Event loop
+    for event in pygame.event.get():
         # If window closed
         if event.type == pygame.QUIT:
             running = False
@@ -29,15 +36,8 @@ while running:
 
         # Checks for key input
         if event.type == pygame.KEYDOWN:
-            if event.key == K_LEFT:
-                print("Left")
-            if event.key == K_RIGHT:
-                print("Right")
-            if event.key == K_DOWN:
-                print("Down")
-            if event.key == K_UP:
-                print("Up")
-
+            if event.key == K_SPACE:
+                pass
 
 
 
